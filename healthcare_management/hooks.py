@@ -163,7 +163,7 @@ scheduler_events = {
 # 	],
 	"daily": [
 # 		"healthcare_management.tasks.daily"
-        "healthcare_management.your_module.reset_all_tokens"
+        "healthcare_management.services.reset_all_tokens_api.reset_all_tokens"
 	],
 # 	"hourly": [
 # 		"healthcare_management.tasks.hourly"
