@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-28 10:01:09.772847",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "healthcare_practitioner",
+  "department",
+  "company",
+  "column_break_uqmu",
+  "amended_from",
+  "date_and_time",
+  "pharmacy_invoice_number",
+  "section_break_pnxf",
+  "medicines",
+  "section_break_fuie",
+  "column_break_spwb",
+  "saved_amount",
+  "column_break_xmep",
+  "total_quantity",
+  "column_break_dwwe",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "options": "Patient",
+   "reqd": 1
+  },
+  {
+   "fieldname": "healthcare_practitioner",
+   "fieldtype": "Link",
+   "label": "Healthcare Practitioner",
+   "options": "Healthcare Practitioner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pharmacy Billing",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_uqmu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pnxf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "medicines",
+   "fieldtype": "Table",
+   "label": "Medicines",
+   "options": "Pharmaceuticals"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "default": "Now",
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and Time"
+  },
+  {
+   "fieldname": "section_break_fuie",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_spwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xmep",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity"
+  },
+  {
+   "fieldname": "column_break_dwwe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "saved_amount",
+   "fieldtype": "Data",
+   "label": "Saved Amount"
+  },
+  {
+   "bold": 1,
+   "fieldname": "pharmacy_invoice_number",
+   "fieldtype": "Data",
+   "label": "Pharmacy Invoice Number",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-21 17:32:19.638237",
+ "modified_by": "Administrator",
+ "module": "Health Care Management",
+ "name": "Pharmacy Billing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-03 08:44:54.036725",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_2l4s",
+  "patient_name",
+  "healthcare_practitioner",
+  "department",
+  "column_break_mivu",
+  "date_and_time",
+  "section_break_lvgo",
+  "lab_items",
+  "amended_from",
+  "section_break_njih",
+  "column_break_hvpm",
+  "total_items",
+  "saved_amount",
+  "column_break_duta",
+  "total_quantity",
+  "column_break_saun",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_2l4s",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "label": "Patient Name",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "healthcare_practitioner",
+   "fieldtype": "Link",
+   "label": "Healthcare Practitioner",
+   "options": "Healthcare Practitioner"
+  },
+  {
+   "fieldname": "column_break_mivu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and Time"
+  },
+  {
+   "fieldname": "section_break_lvgo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lab_items",
+   "fieldtype": "Table",
+   "label": "Lab Items",
+   "options": "Lab Items"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Laboratory Bill",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "section_break_njih",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hvpm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_duta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity"
+  },
+  {
+   "fieldname": "column_break_saun",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "total_items",
+   "fieldtype": "Data",
+   "label": "Total Items"
+  },
+  {
+   "fieldname": "saved_amount",
+   "fieldtype": "Float",
+   "label": "Saved Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-19 15:24:07.913473",
+ "modified_by": "Administrator",
+ "module": "Health Care Management",
+ "name": "Laboratory Bill",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

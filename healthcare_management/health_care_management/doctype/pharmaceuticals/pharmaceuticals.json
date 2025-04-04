@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-28 10:53:07.155099",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hsn",
+  "item_code",
+  "item_name",
+  "batch",
+  "expiry_date",
+  "qty",
+  "mrp",
+  "discount_",
+  "gst_",
+  "amount",
+  "strips",
+  "nos",
+  "tablets_per_strip",
+  "discounted_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "hsn",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "HSN"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "batch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Batch",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Expiry Date",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qty",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "mrp",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "MRP"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "discount_",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Discount (%)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "gst_",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "GST (%)",
+   "options": "0\n5\n12\n18\n28"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "precision": "3"
+  },
+  {
+   "fieldname": "strips",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Strips"
+  },
+  {
+   "fieldname": "nos",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "No.s"
+  },
+  {
+   "fieldname": "tablets_per_strip",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Tablets per strip"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "discounted_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Discounted Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-24 12:13:40.339755",
+ "modified_by": "Administrator",
+ "module": "Health Care Management",
+ "name": "Pharmaceuticals",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

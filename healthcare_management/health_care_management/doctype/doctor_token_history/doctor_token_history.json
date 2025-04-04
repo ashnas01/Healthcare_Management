@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-05 09:54:52.737978",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_unhl",
+  "token_series",
+  "column_break_swva",
+  "last_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_unhl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "token_series",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Token Series"
+  },
+  {
+   "fieldname": "column_break_swva",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_token",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Last Token"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-05 09:58:28.560162",
+ "modified_by": "Administrator",
+ "module": "Health Care Management",
+ "name": "Doctor Token History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
