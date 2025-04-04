@@ -150,6 +150,9 @@ doc_events = {
     },
     "Pharmacy Billing": {
         "before_insert": "healthcare_management.services.pharmacy_inv_no.before_insert"
+    },
+    "Item": {
+        "after_insert": "healthcare_management.services.batch_api.create_batch_from_item"
     }
 }
 
