@@ -13,7 +13,6 @@
   "date_and_time",
   "section_break_rctc",
   "nursing_items",
-  "amended_from",
   "section_break_mzkj",
   "column_break_fpxk",
   "total_items",
@@ -70,16 +69,6 @@
    "options": "Nursing Items"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Clinical Procedure Bill",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "section_break_mzkj",
    "fieldtype": "Section Break"
   },
@@ -131,7 +120,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-26 15:33:39.047950",
+ "modified": "2025-04-08 09:08:53.203155",
  "modified_by": "Administrator",
  "module": "Health Care Management",
  "name": "Clinical Procedure Bill",

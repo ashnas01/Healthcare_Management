@@ -63,13 +63,13 @@
   },
   {
    "fieldname": "discounted_amount",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Discounted Amount"
   },
   {
    "fieldname": "amount_before_discount",
-   "fieldtype": "Float",
+   "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amount Before Discount"
   }
@@ -77,7 +77,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-20 10:53:25.135711",
+ "modified": "2025-04-08 08:46:11.988076",
  "modified_by": "Administrator",
  "module": "Health Care Management",
  "name": "Nursing Items",

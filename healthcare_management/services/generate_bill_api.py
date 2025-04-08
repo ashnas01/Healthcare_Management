@@ -1,10 +1,11 @@
+from datetime import datetime, timedelta
 import frappe
 from frappe import _
 from frappe.utils import nowdate, flt,cint, getdate
 from frappe.model.document import Document
 
 @frappe.whitelist()
-def create_sales_invoice(patient, patient_name, doctor=None, items=None, mode_of_payment=None):
+def create_sales_invoice(patient, patient_name, doctor=None, items=None, mode_of_payment=None, encounter_token=None):
     """
     Creates a Sales Invoice for a Patient with optimizations and auto-generates Payment Entry + Patient Encounter.
     """
@@ -30,7 +31,7 @@ def create_sales_invoice(patient, patient_name, doctor=None, items=None, mode_of
         payment_entry = process_payment(invoice, mode_of_payment) if mode_of_payment else None
         
         # Create patient encounter
-        encounter = create_patient_encounter(patient, doctor, invoice.company)
+        encounter = create_patient_encounter(patient, doctor, invoice.company, encounter_token)
         
         return build_response(invoice, encounter)
 
@@ -108,6 +109,11 @@ def update_patient_registration_details(patient):
     if patient_doc.custom_consultation_renewal_date != renewal_date:
         patient_doc.custom_consultation_renewal_date = renewal_date
         changed = True
+        
+    if patient_doc.custom_consultation_valid_date != renewal_date:
+        current_date_obj = datetime.strptime(renewal_date, '%Y-%m-%d')
+        patient_doc.custom_consultation_valid_date = current_date_obj + timedelta(days=6)
+        changed = True
 
     if changed:
         patient_doc.save(ignore_permissions=True)
@@ -178,7 +184,7 @@ def get_payment_account(mode, company):
     return frappe.get_cached_value("Mode of Payment Account", 
         {"parent": mode, "company": company}, "default_account")
 
-def create_patient_encounter(patient, doctor, company):
+def create_patient_encounter(patient, doctor, company, encounter_token):
     """Optimized patient encounter creation"""
     if not doctor:  # Skip if no doctor specified
         return None
@@ -189,7 +195,8 @@ def create_patient_encounter(patient, doctor, company):
         "practitioner": doctor,
         "encounter_date": nowdate(),
         "company": company,
-        "encounter_type": "Outpatient"
+        "encounter_type": "Outpatient",
+        "custom_encounter_token": encounter_token
     })
     
     encounter.insert(ignore_permissions=True)

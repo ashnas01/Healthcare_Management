@@ -146,7 +146,12 @@ app_license = "mit"
 # }
 doc_events = {
     "Patient": {
-        "after_insert": "healthcare_management.services.address_api.create_address_from_patient"
+        # "after_insert": [
+        #     "healthcare_management.services.address_api.create_address_from_patient",
+        #     "healthcare_management.services.naming.generate_uid_series"
+        # ]
+        "after_insert": "healthcare_management.services.address_api.create_address_from_patient",
+        "before_insert": "healthcare_management.services.naming.before_insert",  # Path to the method
     },
     "Pharmacy Billing": {
         "before_insert": "healthcare_management.services.pharmacy_inv_no.before_insert"

@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "column_break_wfpu",
   "date",
   "column_break_unhl",
   "token_series",
@@ -13,13 +14,6 @@
   "last_token"
  ],
  "fields": [
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Date"
-  },
   {
    "fieldname": "column_break_unhl",
    "fieldtype": "Column Break"
@@ -41,12 +35,21 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Last Token"
+  },
+  {
+   "fieldname": "column_break_wfpu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-05 09:58:28.560162",
+ "modified": "2025-04-07 11:01:35.560028",
  "modified_by": "Administrator",
  "module": "Health Care Management",
  "name": "Doctor Token History",

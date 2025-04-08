@@ -1,39 +1,36 @@
 import frappe
-from datetime import datetime
+from datetime import date
 
 @frappe.whitelist()
 def manage_token(practitioner_name):
-    today_date = datetime.today().strftime('%Y-%m-%d')
+    today_str = date.today().strftime('%Y-%m-%d')
 
-    # Fetch Healthcare Practitioner record
-    practitioner = frappe.get_doc("Healthcare Practitioner", practitioner_name)
+    # Fetch the Healthcare Practitioner doc
+    doctor = frappe.get_doc("Healthcare Practitioner", practitioner_name)
 
-    if not practitioner or not practitioner.token_history:
-        frappe.throw("No token configuration found for this practitioner.")
-
-    # Get today's token entry
-    token_entry = next((t for t in practitioner.token_history if t.date == today_date), None)
+    # Look for today's token entry
+    token_entry = next(
+        (t for t in doctor.custom_token_history if str(t.date) == today_str),
+        None
+    )
 
     if not token_entry:
-        # If no entry exists for today, create a new one with token series "A-"
-        new_token_series = practitioner.token_history[-1].token_series
+        # If no entry exists for today, create a new one with token series "doctor_name-"
+        # new_token_series = practitioner_name.lower()  # Token series is based on doctor's name
+        new_token_series = doctor.custom_token_series.upper() 
         new_token_number = 1
-        new_token = f"{new_token_series}{new_token_number}"
+        new_token = f"{new_token_series}-{new_token_number}"
 
-        practitioner.append("token_history", {
-            "date": today_date,
-            "token_series": new_token_series, 
-            "last_token": new_token
-        })
     else:
-        # Increment last token
+        # Increment last token number for the given date
         series = token_entry.token_series
-        last_token_number = int(token_entry.last_token) + 1
-        new_token = f"{series}{last_token_number}"
-        token_entry.last_token = last_token_number  # Update last token in database
+        last_token = int(token_entry.last_token) + 1  # Increment the last token number
+        new_token = f"{series}-{last_token}"
 
-    # Save changes
-    practitioner.save(ignore_permissions=True)
+        # Update the last token number in the token entry
+        token_entry.last_token = last_token
+
+    # doctor.save(ignore_permissions=True)
     frappe.db.commit()
 
     return new_token
